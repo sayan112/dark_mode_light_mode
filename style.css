@@ -6,17 +6,24 @@
     box-sizing: border-box;
 }
 :root{
-    --color-primary :hsl(56, 91%, 59%);
+    --color-primary :hsl(56, 100%, 73%);
+    --color-body:hsl(229, 56%, 70%);
+    --color-text:hsl(229, 20%, 20%);
      
+}
+
+.dark-mode{
+    --color-body:hsl(229, 56%, 10%);
+    --color-text:hsl(229, 20%, 90%);
 }
 body{
     /* we have to learn about color variables */
-     
 
-    background-color: var(--color-primary);
     font-family: 'Dancing Script', cursive;
+    background: var(--color-body);
 /* font-family: 'Roboto Slab', serif; */
 }
+
 
 .main-page p {
     display: flex;
@@ -24,9 +31,9 @@ body{
     align-items: center;
     height: 200px;
     /* border: 3px solid green; */
- color: black;
+ color:var(--color-text);
   font-weight: 900;
-   font-size: xx-large;
+   font-size:3em;
    /* padding-left: 100px; */
  
 }
@@ -40,10 +47,9 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: rgb(253, 166, 166);
 }
 
-.glow-on-hover {
+.button-dark-light {
     margin: 100px;
     width: 220px;
     height: 50px;
@@ -57,7 +63,7 @@ body {
     border-radius: 10px;
 }
 
-.glow-on-hover:before {
+.button-dark-light:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
@@ -74,19 +80,19 @@ body {
     border-radius: 10px;
 }
 
-.glow-on-hover:active {
+.button-dark-light:active {
     color: #000
 }
 
-.glow-on-hover:active:after {
+.button-dark-light:active:after {
     background: transparent;
 }
 
-.glow-on-hover:hover:before {
+.button-dark-light:hover:before {
     opacity: 1;
 }
 
-.glow-on-hover:after {
+.button-dark-light:after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -103,3 +109,4 @@ body {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
